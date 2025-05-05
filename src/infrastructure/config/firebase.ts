@@ -6,7 +6,7 @@ dotenv.config();
 
 //const serviceAccount = JSON.parse(process.env.FIREBASE_ACCOUNT || '');
 
-var serviceAccount = require("../config/firebase_json.json");
+//var serviceAccount = require("../config/firebase_json.json");
 
 admin.initializeApp({
   credential: admin.credential.cert({
