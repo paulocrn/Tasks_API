@@ -1,4 +1,3 @@
-import { Task } from '../../../domain/models/Task';
 import { TaskRepository } from '../../../infrastructure/repositories/TaskRepository';
 import { CreateTaskDTO } from '../../dtos/CreateTaskDTO';
 import { TaskDTO } from '../../dtos/TaskDTO';
