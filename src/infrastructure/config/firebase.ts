@@ -1,8 +1,10 @@
 import admin from 'firebase-admin';
 import dotenv from 'dotenv';
-import serviceAccount from '../config/firebase_json.json';
+//import serviceAccount from '../config/firebase_json.json';
 
 dotenv.config();
+
+const serviceAccount = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS || '');
 
 
 admin.initializeApp({
