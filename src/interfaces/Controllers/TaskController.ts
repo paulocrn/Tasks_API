@@ -34,11 +34,16 @@ export const getTasks = async (req: AuthenticatedRequest, res: Response): Promis
 };
 
 
-export const addTask = async (req: Request, res: Response) => {
+export const addTask = async (req: AuthenticatedRequest, res: Response) => {
 
   try{
     const dto: CreateTaskDTO = req.body;
-    const userId = req.body.userId;
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      res.status(401).json({ message: 'Acceso denegado: Usuario no autenticado' });
+      return;
+    }
 
     const task = await addTaskUseCase.execute(dto, userId);
     res.status(201).json(task);
