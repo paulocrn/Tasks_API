@@ -6,5 +6,6 @@ export class DeleteTaskUseCase {
     async execute(id: string): Promise<boolean> {
       return await this.taskRepo.delete(id);
     }
+    
   }
   
